@@ -5,10 +5,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BankStatementCSVParser {
+public class BankStatementCSVParser implements BankStatementParser{
     public static final DateTimeFormatter DATE_PATTERN = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
-    private BankTransaction parseFrom(final String line) {
+    public BankTransaction parseFrom(final String line) {
         final String[] columns = line.split(",");
         final LocalDate date = LocalDate.parse(columns[0], DATE_PATTERN);
         final double amount = Double.parseDouble(columns[1]);
