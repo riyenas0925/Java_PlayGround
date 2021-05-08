@@ -1,19 +1,24 @@
 package designpattern.singleton2;
 
 public class Printer {
-    private static Printer printer = new Printer();
+    private static Printer printer = null;
     private int counter = 0;
 
     private Printer() {
 
     }
 
-    public static Printer getPrinter() {
+    public synchronized static Printer getPrinter() {
+        if(printer == null) {
+            printer = new Printer();
+        }
         return printer;
     }
 
     public void print(String str) {
-        counter++;
-        System.out.println(str);
+        synchronized (this) {
+            counter++;
+            System.out.println(str + counter);
+        }
     }
 }
