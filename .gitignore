@@ -25,4 +25,5 @@ hs_err_pid*
 # intelliJ
 .idea
 .gradle
+build
 out
