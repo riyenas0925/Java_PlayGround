@@ -1,4 +1,4 @@
-package realworldjava;
+package realworldjava.bankanalyzer;
 
 import java.io.IOException;
 
