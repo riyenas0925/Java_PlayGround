@@ -1,13 +1,13 @@
 package designpattern.command;
 
 public class Button {
-    private Lamp theLamp;
+    private Alarm theAlarm;
 
-    public Button(Lamp theLamp) {
-        this.theLamp = theLamp;
+    public Button(Alarm theAlarm) {
+        this.theAlarm = theAlarm;
     }
 
     public void pressed() {
-        theLamp.turnOn();
+        theAlarm.turnOn();
     }
 }
