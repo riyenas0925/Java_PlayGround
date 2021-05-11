@@ -2,8 +2,14 @@ package designpattern.command;
 
 public class Client {
     public static void main(String[] args) {
+        Lamp lamp = new Lamp();
         Alarm alarm = new Alarm();
-        Button lampButton = new Button(alarm);
-        lampButton.pressed();
+        Button button = new Button(lamp, alarm);
+
+        button.setMode(Mode.LAMP);
+        button.pressed();
+
+        button.setMode(Mode.ALARM);
+        button.pressed();
     }
 }
