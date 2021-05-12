@@ -1,26 +1,17 @@
 package designpattern.command;
 
 public class Button {
-    private Lamp theLamp;
-    private Alarm theAlarm;
-    private Mode theMode;
+    private Command theCommand;
 
-    public Button(Lamp theLamp, Alarm theAlarm) {
-        this.theLamp = theLamp;
-        this.theAlarm = theAlarm;
+    public Button(Command theCommand) {
+        setCommand(theCommand);
     }
 
-    public void setMode(Mode theMode) {
-        this.theMode = theMode;
+    public void setCommand(Command theCommand) {
+        this.theCommand = theCommand;
     }
 
     public void pressed() {
-        switch (theMode) {
-            case LAMP:
-                theLamp.turnOn();
-                break;
-            case ALARM:
-                theAlarm.turnOn();
-        }
+        theCommand.execute();
     }
 }
