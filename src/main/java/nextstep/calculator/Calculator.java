@@ -1,4 +1,4 @@
-package nextstep;
+package nextstep.calculator;
 
 public class Calculator {
 
