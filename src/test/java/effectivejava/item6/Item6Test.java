@@ -51,7 +51,7 @@ public class Item6Test {
         }
 
         end = System.currentTimeMillis();
-        System.out.println((end - start) / 1000.0 + "ms");
+        System.out.println((end - start) / 1000.0 + "s");
 
         start = System.currentTimeMillis();
 
@@ -59,7 +59,7 @@ public class Item6Test {
             isRomanNumeralNew("LXXXVIII");
         }
         end = System.currentTimeMillis();
-        System.out.println((end - start) / 1000.0 + "ms");
+        System.out.println((end - start) / 1000.0 + "s");
     }
 
     @Test
