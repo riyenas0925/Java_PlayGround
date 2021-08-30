@@ -8,14 +8,18 @@ import org.junit.jupiter.api.Test;
 public class Item6Test {
 
     @Test
-    @DisplayName("문자열 리터럴을 사용하는 모든 코드가 같은 객체를 재사용")
-    public void string_2() {
+    @DisplayName("매번 새로운 객체를 생성")
+    public void string_1() {
         String s1 = new String("apple");
         String s2 = new String("apple");
 
         assertThat(s1).isEqualTo(s2);
         assertThat(s1).isNotSameAs(s2);
+    }
 
+    @Test
+    @DisplayName("문자열 리터럴을 사용하는 모든 코드가 같은 객체를 재사용")
+    public void string_2() {
         String s3 = "apple";
         String s4 = "apple";
 
@@ -25,7 +29,7 @@ public class Item6Test {
 
     @Test
     @DisplayName("생성자 대신 정적 팩터리 메서드를 사용")
-    public void static_factory_method() {
+    public void static_factory_method_1() {
         Boolean bool1 = new Boolean("true");
         Boolean bool2 = new Boolean("true");
 

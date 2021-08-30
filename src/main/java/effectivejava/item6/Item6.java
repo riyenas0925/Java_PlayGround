@@ -38,7 +38,6 @@ public class Item6 {
 
     static long sumNew() {
         long sum = 0;
-
         for (long i = 0; i < Integer.MAX_VALUE; i++) {
             sum += i;
         }
