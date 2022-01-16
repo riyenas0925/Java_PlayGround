@@ -1,0 +1,5 @@
+#written by FileProperties
+#Sat Jan 15 21:36:03 KST 2022
+month=4
+year=2004
+day=21
