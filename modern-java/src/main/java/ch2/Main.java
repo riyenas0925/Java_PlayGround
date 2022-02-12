@@ -15,13 +15,8 @@ public class Main {
                 new Apple(RED, 120)
         );
 
-        ApplePredicate appleGreenColorPredicate = new AppleGreenColorPredicate();
-
-        List<Apple> result = filterApples(inventory, appleGreenColorPredicate);
-
-        result.stream().forEach(e -> {
-            System.out.println(e.getWeight() + ", " + e.getColor());
-        });
+        List<Apple> result = filterApples(inventory, new AppleGreenColorPredicate());
+        prettyPrintApple(result, new AppleFancyFormatter());
     }
 
     public static List<Apple> filterApples(List<Apple> inventory, ApplePredicate p) {
@@ -34,6 +29,12 @@ public class Main {
         }
 
         return result;
+    }
+
+    public static void prettyPrintApple(List<Apple> inventory, AppleFormatter f) {
+        for (Apple apple : inventory) {
+            System.out.println(f.accept(apple));
+        }
     }
 
 }
