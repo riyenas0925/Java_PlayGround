@@ -15,12 +15,7 @@ public class Main {
                 new Apple(RED, 120)
         );
 
-        List<Apple> result = filterApples(inventory, new ApplePredicate() {
-            @Override
-            public boolean test(Apple apple) {
-                return RED.equals(apple.getColor());
-            }
-        });
+        List<Apple> result = filterApples(inventory, (Apple apple) -> RED.equals(apple.getColor()));
         prettyPrintApple(result, new AppleFancyFormatter());
     }
 
