@@ -15,18 +15,20 @@ public class Main {
                 new Apple(RED, 120)
         );
 
-        List<Apple> result = filterGreenApples(inventory, RED);
+        ApplePredicate appleGreenColorPredicate = new AppleGreenColorPredicate();
+
+        List<Apple> result = filterApples(inventory, appleGreenColorPredicate);
 
         result.stream().forEach(e -> {
             System.out.println(e.getWeight() + ", " + e.getColor());
         });
     }
 
-    public static List<Apple> filterGreenApples(List<Apple> inventory, Color color) {
+    public static List<Apple> filterApples(List<Apple> inventory, ApplePredicate p) {
         List<Apple> result = new ArrayList<>();
 
         for (Apple apple : inventory) {
-            if (apple.getColor().equals(color)) {
+            if (p.test(apple)) {
                 result.add(apple);
             }
         }
@@ -34,15 +36,4 @@ public class Main {
         return result;
     }
 
-    public static List<Apple> filterApplesByWeight(List<Apple> inventory, int weight) {
-        List<Apple> result = new ArrayList<>();
-
-        for (Apple apple : inventory) {
-            if (apple.getWeight() > weight) {
-                result.add(apple);
-            }
-        }
-
-        return result;
-    }
 }
